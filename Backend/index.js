@@ -3,10 +3,12 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import connectCloudinary from "./confing/Cloudinary.js";
 import UserRouter from "./routers/UserRoter.js";
 
 const app = express();
 dotenv.config();
+connectCloudinary();
 
 const port = process.env.PORT;
 const mongo_url = process.env.MONGO_URL;
