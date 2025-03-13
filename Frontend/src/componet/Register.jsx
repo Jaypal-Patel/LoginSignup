@@ -70,7 +70,7 @@ const Register = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col items-center">
             <label htmlFor="imageUpload" className="cursor-pointer">
-              <div className="w-24 h-24 rounded-full border-2 border-blue-500 overflow-hidden flex justify-center items-center bg-gray-200">
+              <div className="w-22 h-22 rounded-full border-2 border-gray-500 overflow-hidden flex justify-center items-center bg-gray-200">
                 {preview ? (
                   <img
                     src={preview}
