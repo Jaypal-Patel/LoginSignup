@@ -44,17 +44,15 @@ const Welcome = () => {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white w-2xl p-6 rounded-lg shadow-lg text-center">
-        <h2 className="text-3xl font-semibold text-gray-700">Welcome</h2>
-
-        <div className="w-24 h-24 rounded-full border-2 border-blue-500 overflow-hidden mx-auto mt-4">
+        <div className="w-32 h-32 rounded-full border-2 border-blue-500 overflow-hidden mx-auto mt-4">
           <img
             src={user.image || <img src="./userIcon.jpg" />}
             alt="Profile"
             className="w-full h-full object-cover"
           />
         </div>
-
-        <h3 className="mt-3 text-lg font-medium text-gray-800">
+        <h2 className="text-3xl mt-3 font-semibold text-gray-700">Welcome</h2>
+        <h3 className="mt-1 text-lg font-medium text-gray-800">
           {user.fullName}
         </h3>
 

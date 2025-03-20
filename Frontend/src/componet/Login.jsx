@@ -30,9 +30,10 @@ const Login = () => {
       );
 
       if (data.success) {
-        toast.success("Login Successful");
         localStorage.setItem("userToken", data.token);
         setTimeout(() => navigate("/profile"), 2000);
+      } else {
+        toast.error(data.message);
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Login failed");

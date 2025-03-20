@@ -6,9 +6,19 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-    fullName: {
+    firstName: {
       type: String,
       required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: Number,
+    },
+    dob: {
+      type: Date,
     },
     email: {
       type: String,

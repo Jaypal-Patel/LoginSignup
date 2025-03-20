@@ -6,10 +6,13 @@ import { toast } from "react-toastify";
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     image: null,
+    dob: "",
+    phone: "",
   });
 
   const [preview, setPreview] = useState(null);
@@ -35,9 +38,12 @@ const Register = () => {
     e.preventDefault();
 
     const formDataToSend = new FormData();
-    formDataToSend.append("fullName", formData.fullName);
+    formDataToSend.append("firstName", formData.firstName);
+    formDataToSend.append("lastName", formData.lastName);
     formDataToSend.append("email", formData.email);
     formDataToSend.append("password", formData.password);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("dob", formData.dob);
     formDataToSend.append("image", formData.image);
 
     try {
@@ -94,9 +100,18 @@ const Register = () => {
 
           <input
             type="text"
-            name="fullName"
-            placeholder="Full Name"
-            value={formData.fullName}
+            name="firstName"
+            placeholder="First Name"
+            value={formData.firstName}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-lg"
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Last Name"
+            value={formData.lastName}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded-lg"
@@ -117,6 +132,26 @@ const Register = () => {
             name="password"
             placeholder="Password"
             value={formData.password}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-lg"
+          />
+
+          <input
+            type="number"
+            name="phone"
+            placeholder="Phone No."
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-lg"
+          />
+
+          <input
+            type="date"
+            name="dob"
+            placeholder="Date of birth"
+            value={formData.dob}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded-lg"

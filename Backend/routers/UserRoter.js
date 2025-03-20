@@ -3,8 +3,10 @@ import {
   Register,
   Login,
   Profile,
-  ForgetPassword,
-  ResetPassword,
+  UserUpdate,
+  SendOtp,
+  VerifyOtp,
+  ChangePassword,
 } from "../controllers/UserController.js";
 import AuthUser from "../middlewares/userAuth.js";
 import uplode from "../middlewares/multer.js";
@@ -14,7 +16,9 @@ const router = express.Router();
 router.post("/register", uplode.single("image"), Register);
 router.post("/login", Login);
 router.get("/profile", AuthUser, Profile);
-router.post("/forget-password", ForgetPassword);
-router.post("/reset-password/:id/:token", ResetPassword);
+router.put("/update/:id", uplode.single("image"), UserUpdate);
+router.post("/forget-password", SendOtp);
+router.post("/verify-otp", VerifyOtp);
+router.post("/reset-password", ChangePassword);
 
 export default router;
